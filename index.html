@@ -145,28 +145,32 @@
 
           
           <div id="contact-box">
-               <form name="contact" netlify>
+               <form name="contact" method="POST" data-netlify="true">
                     
                          <div class="container1" style="border: 1px solid #ba5273;">
 
                               <div class="form-group">
-                                  <input type="text" id="name" placeholder="Enter your name">
+                                   <p>
+                                  <label>Your Email: <input type="text" id="name" placeholder="Enter your name"></label>
+                                   </p>
 
                               </div >
                               <div class="form-group">
-                                   <input type="email" id="email" placeholder="Enter your email">
+                                   <p>
+                                   <label>Your Email: <input type="email" id="email" placeholder="Enter your email"></label>
+                                   </p>
 
                               </div>
                               <div class="form-group">
+                                   <p>
+                                        <label>Message: <textarea name="message" id="message" cols="30" rows="10"  placeholder="Tell us about your message"  required=""></textarea></label>
+                                   </p>
                                    
-                                   <textarea name="message" id="message" cols="30" rows="10"  placeholder="Tell us about your message"  required="">
-                                   
-                                   </textarea>
                               </div>
 
-                              <div class="form-group">
+                              <!--<div class="form-group">
                                    <div data-netlify-recaptcha="true"></div>
-                              </div>
+                              </div>-->
              
              
                               <button class="btn3" type="submit">Submit</button><br>
