@@ -478,6 +478,9 @@ text-align: left;
 height: 235px;
 }
 
+.contact-box .form-group .data-netlify-recaptcha{
+     text-align: center;
+}
 
 /* Contact Section */
 section #contact{
