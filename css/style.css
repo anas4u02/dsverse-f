@@ -182,7 +182,7 @@ padding: 36px 0 40px 0px;
 .home-slider .item-first {
 
      /* background-image: url(../images/slider-image1.jpg); */
-    background-image: url(/images/homeLayout1.jpg);
+    background-image: url(images/homeLayout1.jpg);
     /* background-color: #252525; */
      background-position: center;
 }
