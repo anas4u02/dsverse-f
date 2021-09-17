@@ -19,9 +19,6 @@
             <li class="list-item-inline">
                 <a class="link link-secondary" href="https://tanmay.netlify.app/index.html">about me</a>
             </li>
-            <li class="list-item-inline">
-                <a class="link link-secondary" href="tps.shinde@gmail.com">contact me</a>
-            </li>
         </ul>
     </nav>
 
@@ -30,22 +27,26 @@
         <h1 class="hero-heading">Trees</h1>
     </header>
 
-    <div style="padding-bottom: 2rem;" class="container container-center">
+    <section class="section" style="transition: visibility 1s, opacity 1s; visibility: visible; opacity: 1; margin-top: 0px;">
+      <div class="container container-center">
         <p>Just like an ordinary tree you see, but the inverted version. Root goes on the top. This is a common phrase you hear when tree is being introduced.</p>
         <p>Unlike arrays and stacks, tree is a hierarchical data structure. This clearly means that there is a notion of parent and children. And even grandparents of course. Root of the tree has no parent and the leaves have no children yet. Nodes that are not leaves are called internal nodes, having at least one child.</p>
         <p>Now the trees which can be related to the olden days, called general trees have no restrictions on the number of children. But there are “n-ary trees” which can have at most ‘n’ children. The very famous binary trees can have at most two. Bounded by the laws isn't it?</p>
-    </div>
+      </div>
+    </section>
+    
 
-    <section class="section off-white">
+    <section class="section off-white" style="transition: visibility 1s, opacity 1s; visibility: hidden; opacity: 0;">
         <div class="container container-center">
             <h2>general tree</h2>
             <p>File organization in operating systems use general trees to store directories and files. The leaf nodes are files. Internal nodes can be directories and sub-directories.</p>
             <p>General tree can be represented as node structure having a data field, reference to the first child and a reference to the next sibling.</p>
+            <p>Here is a general tree node in C++</p>
             <img class="image" src="images/tree2.png">
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="transition: visibility 1s, opacity 1s; visibility: hidden; opacity: 0;">
         <div class="container container-center">
             <h2>binary search tree</h2>
             <p>It keeps the data in a sorted fashion allowing the search to be binary which improves the time complexity to O(log n). All nodes to the left of a root are smaller than it and to the right are greater. And this is valid for all sub-trees of the tree.</p>
@@ -56,16 +57,18 @@
         </div>
     </section>
 
-    <section class="section off-white">
+    <section class="section off-white" style="transition: visibility 1s, opacity 1s; visibility: hidden; opacity: 0;">
         <div class="container container-center">
             <h2>learning resource</h2>
             <p>If you are now interested in studying trees, here is a link.</p>
             <p>This is a video which begins the tree section of "My Code School's" data structure playlist, which is in C++.</p>
-            <iframe width="360" height="115" src="https://www.youtube.com/embed/qH6yxkw0u78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="resource-link-style">
+            <iframe style="margin: auto;" src="https://www.youtube.com/embed/qH6yxkw0u78" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
-    <section class="section">
+    <section class="section" style="transition: visibility 1s, opacity 1s; visibility: hidden; opacity: 0; border-bottom: none;">
         <section class="recentNews">
             <div class="container container-center">
               <h2 class="news-title">Recommended Articles</h2>
@@ -86,7 +89,7 @@
                     </div>                                                                                                       <!--blog content-->
                   </div>                                                                                                         <!--inner-->
                 </div>
-                <p style="">author: Mohammad Anas</p>                                                                                                         <!--ct blog col sm col md 4-->
+                <p>author: Mohammad Anas</p>                                                                                                         <!--ct blog col sm col md 4-->
                 <div class="ct-blog col-sm-6 col-md-4">
                   <div class="inner">
                     <div class="fauxcrop">
@@ -108,7 +111,6 @@
           </section>
     </section>
 
-
     <footer class="footer">
         <p>page contributed by <span style="color: rgb(0, 255, 13);">Tanmay Shinde</span></p>
         <p>Computer Science department, TCOER, Pune.</p>
@@ -116,5 +118,31 @@
 
         <h5>this page is a part of DSVerse</h5>
     </footer>
+
+    <script>
+      //get a reference to all the sections
+      var allSections = document.querySelectorAll(".section");
+      var windowHeight = window.innerHeight;
+
+      allSections = Array.from(allSections);
+
+      window.addEventListener("scroll", function scrollHandler() {
+        //for all the sections at each window scroll event
+        for (let section in allSections) {
+          var element = allSections[section];
+          var domRectObj = element.getBoundingClientRect();
+          var top = domRectObj.top;
+          var bottom = domRectObj.bottom;
+          if ((top<2*windowHeight/3 && top>0) || (bottom>windowHeight/3 && bottom<windowHeight) || (top<0 && bottom>windowHeight)) {
+            element.style.opacity = 1;
+            element.style.visibility = "visible";
+          }
+          else {
+            element.style.opacity = 0;
+            element.style.visibility = "hidden";
+          }
+        }
+      })
+    </script>
 </body>
 </html>

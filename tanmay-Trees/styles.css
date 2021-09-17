@@ -34,7 +34,7 @@ body {
 }
 
 .hero {
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-bottom: 1rem;
 }
 .hero .hero-image {
@@ -57,7 +57,13 @@ body {
 }
 
 .section {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
     padding: 1rem;
+    max-width: 600px;
+    border-bottom: 3px solid var(--primary-color);
+
 }
 .off-white {
     background-color: #E5E7EB;
@@ -72,11 +78,24 @@ body {
     border: 2px solid white;
     color: white;
     border-radius: 0.5rem;
+    font-weight: bold;
+}
+nav a:hover {
+    padding: 0rem 0.5rem;
+    border: 2px solid white;
+    background-color: white;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .image {
     display: block;
     width: 200px;
+    margin: auto;
+}
+
+.resource-link-style {
+    width: 300px;
     margin: auto;
 }
 
@@ -122,7 +141,6 @@ body {
     background-color: #e6e6e6;
 }
 .ct-blog .fauxcrop {
-    height: 180px;
     overflow: hidden;
 }
 .ct-blog .fauxcrop img {
